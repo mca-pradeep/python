@@ -3,7 +3,7 @@ from whoosh import scoring
 from whoosh.index import open_dir
 import sys
 
-ix = open_dir("indexdir")
+ix = open_dir("../../indexdir")
 
 # query_str is query string
 query_str = sys.argv[1]

@@ -23,10 +23,10 @@ def createSearchableData():
     '''
     schema = Schema(title=TEXT(stored=True), email_from=TEXT(stored=True),email_to=TEXT(stored=True), email_addr=KEYWORD(stored=True, unique=True, lowercase=True), email_addr_full=KEYWORD(stored=True, unique=True, lowercase=True), id=ID(stored=True), content=TEXT, textdata=TEXT(stored=True))
     if not os.path.exists("indexdir"):
-        os.mkdir("indexdir")
+        os.mkdir("../../indexdir")
 
     # Creating a index writer to add document as per schema
-    ix = create_in("indexdir", schema)
+    ix = create_in("../../indexdir", schema)
     writer = ix.writer()
     try:
         connection = mysql.connector.connect(host='10.0.0.19',

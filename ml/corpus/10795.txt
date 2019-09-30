@@ -1,1 +1,0 @@
- Enter a string of images as the first parameter to have them stack without generating floating errors or spacing errors You can stack many images from the top of a section and not force further subsections to space out noinclude
