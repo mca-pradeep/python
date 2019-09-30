@@ -1,0 +1,21 @@
+To install python 3.6 and make it default
+
+sudo add-apt-repository ppa:jonathonf/python-3.6
+sudo apt-get update
+sudo apt-get install python3.6
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+sudo update-alternatives --config python3
+
+check active version
+python3 -V
+
+
+python setuptools
+
+sudo apt-get install python-setuptools
+
+
+to install Whoosh (file searching)
+
+easy_install Whoosh
