@@ -27,7 +27,7 @@ alias python=python3
 To install pip
 sudo python3 -m pip install --upgrade pip
 
-
+https://docs.djangoproject.com/en/2.2/intro/tutorial02/
 https://data-flair.training/blogs/django-database/
 pip install django
 
