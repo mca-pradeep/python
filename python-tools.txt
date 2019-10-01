@@ -19,3 +19,20 @@ sudo apt-get install python-setuptools
 to install Whoosh (file searching)
 
 easy_install Whoosh
+
+To make python3 default
+update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+alias python=python3
+
+To install pip
+sudo python3 -m pip install --upgrade pip
+
+
+https://data-flair.training/blogs/django-database/
+pip install django
+
+django-admin startproject blog
+
+
+
+pip install django-mysql

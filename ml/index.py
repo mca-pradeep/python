@@ -37,7 +37,7 @@ def createSearchableData():
             db_Info = connection.get_server_info()
             print("Connected to MySQL Server version ", db_Info)
             cursor = connection.cursor(buffered=True, dictionary=True)
-            cursor.execute("select count(*) as total_records from cscan_email2011 c_email inner join cscan_email_text2011 text on(text.muid = c_email.muid);")
+            cursor.execute("select count(*) as total_records from cscan_email2011 c_email inner join cscan_email_text2011 text on(text.muid = c_email.muid AND text.cettype='text/html');")
             totalRecordsObj = cursor.fetchone()
             totalRecords = totalRecordsObj['total_records']
             hasQuotient = int(totalRecords)/RECORD_LIMIT
@@ -51,7 +51,7 @@ def createSearchableData():
             print('Limits start')
             i = 1
             for t in range(toLimit):
-                dataQuery = ("select c_email.muid,c_email.email_subject, c_email.email_from, c_email.email_to, text.cettext,text.cettype  from cscan_email2011 c_email inner join cscan_email_text2011 text on(text.muid = c_email.muid) limit " + str(t*RECORD_LIMIT) + str(",") + str(RECORD_LIMIT) + ";")
+                dataQuery = ("select c_email.muid,c_email.email_subject, c_email.email_from, c_email.email_to, text.cettext,text.cettype  from cscan_email2011 c_email inner join cscan_email_text2011 text on(text.muid = c_email.muid AND text.cettype='text/html') limit " + str(t*RECORD_LIMIT) + str(",") + str(RECORD_LIMIT) + ";")
                 #print(dataQuery)
                 cursor.execute(dataQuery)
                 records = cursor.fetchall()
